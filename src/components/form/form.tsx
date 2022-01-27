@@ -16,7 +16,7 @@ export const MyApp: React.FC<{}> = () => {
                     alert(JSON.stringify(values, null, 2));
                     actions.setSubmitting(false);
                 }}
-            >
+                >
                 <Form>
                     <label htmlFor="firstName">First Name</label>
                     <Field id="firstName" name="firstName" placeholder="First Name" />
