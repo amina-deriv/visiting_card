@@ -1,11 +1,9 @@
 import React from 'react';
-import style from './App.module.scss';
+import { MyApp } from './components/form/form'
 
 function App() {
   return (
-    <div className={style.app}>
-       <div className={style.start}>start</div>
-    </div>
+    <MyApp />
   );
 }
 
