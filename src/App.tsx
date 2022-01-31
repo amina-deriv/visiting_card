@@ -1,9 +1,18 @@
 import React from 'react';
-import { MyApp } from './components/form/form'
+import DataForm from './components/form/form'
 
 function App() {
   return (
-    <MyApp />
+
+    <section className="container">
+      <div className="left-half">
+        <DataForm />
+      </div>
+      <div className="right-half">
+
+      </div>
+    </section >
+
   );
 }
 
