@@ -5,7 +5,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: black;
 }
 
 code {
@@ -18,7 +17,7 @@ code {
 }
 
 .left-half {
-  background-color: grey;
+  background-color: palegoldenrod;
   flex: 1;
   padding: 1rem;
   margin: 1rem;
