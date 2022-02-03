@@ -21,8 +21,13 @@ const SignupSchema = Yup.object().shape({
     mobile: Yup.string().matches(/^\+?((-|\s)*[0-9])*$/, 'Phone number is not valid').required('Required'),
     location: Yup.string().required('Please specify your job location')
 });
-export const DataForm = () => {
+export const DataForm = ({onVCardGenerate}) => {
     const initialValues = { firstName: "", lastName: "", jobTitle: "", email: "", mobile: "", location: "" };
+    
+    const vcardSubmitHandler = (value:VcardProps)=>{
+        onVCardGenerate(value)
+    }
+    
     return (
         <div>
             <h1>Enter your details</h1>
@@ -30,8 +35,9 @@ export const DataForm = () => {
                 initialValues={initialValues}
                 onSubmit={(values, actions) => {
                     console.log({ values, actions });
-                    alert(JSON.stringify(values, null, 2));
-                    actions.setSubmitting(false);
+                    vcardSubmitHandler(values)
+                    // alert(JSON.stringify(values, null, 2));
+                    // actions.setSubmitting(false);
                 }}
                 validationSchema={SignupSchema}
             >
