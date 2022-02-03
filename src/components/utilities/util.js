@@ -29,7 +29,6 @@ export function getVCardFormat(userData) {
 }
 
 export function generateVCard(userData) {
-    console.log("UserData: ", userData)
     const vCardstring = getVCardFormat(userData)
     const file = new Blob([vCardstring], { type: "text/vcard;charset=utf-8" })
     let a = document.createElement("a");

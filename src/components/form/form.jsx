@@ -34,7 +34,6 @@ export const DataForm = ({onVCardGenerate}) => {
             <Formik
                 initialValues={initialValues}
                 onSubmit={(values, actions) => {
-                    console.log({ values, actions });
                     vcardSubmitHandler(values)
                 }}
                 validationSchema={SignupSchema}
