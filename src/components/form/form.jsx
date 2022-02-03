@@ -24,7 +24,7 @@ const SignupSchema = Yup.object().shape({
 export const DataForm = ({onVCardGenerate}) => {
     const initialValues = { firstName: "", lastName: "", jobTitle: "", email: "", mobile: "", location: "" };
     
-    const vcardSubmitHandler = (value:VcardProps)=>{
+    const vcardSubmitHandler = (value)=>{
         onVCardGenerate(value)
     }
     
@@ -36,8 +36,6 @@ export const DataForm = ({onVCardGenerate}) => {
                 onSubmit={(values, actions) => {
                     console.log({ values, actions });
                     vcardSubmitHandler(values)
-                    // alert(JSON.stringify(values, null, 2));
-                    // actions.setSubmitting(false);
                 }}
                 validationSchema={SignupSchema}
             >
