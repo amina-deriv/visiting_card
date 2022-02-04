@@ -39,6 +39,7 @@ export const StyledField = styled.div`
   margin-right: 25px
   font-weight: 300;
   color: ${palette.secondary};
+  width: 600px;
   input{
     appearance: none;
     outline: none;
@@ -47,7 +48,7 @@ export const StyledField = styled.div`
     font-weight: inherit;
     border: 1px solid ${palette.secondary};
     border-radius: 4px;
-    width: 329px;
+    width:80%;
     height: 44px;
     padding-left: 35px;
     padding-right: 25px;
@@ -113,7 +114,14 @@ export const StyledField = styled.div`
   input:-webkit-autofill:focus{
     transition: background-color 5000s ease-in-out 0s;
   }
+  @media (max-width: 1100px) {
+    width: 400px;
+    }
+    @media (max-width: 600px) {
+    width: 250px;
+    }
 `;
+
 export const Error = styled.div`
     align-self: start;
     color: red;
