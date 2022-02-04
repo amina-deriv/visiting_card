@@ -4,8 +4,11 @@ import derivBigLogo from "../../assets/deriv-logo.webp";
 import derivSmalLogo from "../../assets/logo_small.png";
 import { generateImage } from "../utilities/util";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEnvelope, faPhoneAlt, faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
+
 const VCard = props => {
-    const { title, firstName, lastName, contact, email,position, address} = { ...props.user };
+    const { title, firstName, lastName, mobile, email, jobTitle, location } = { ...props.user };
 
     const downloadHandler = () => {
         generateImage("business-card_front", `${firstName}_front` || "contact");
@@ -22,28 +25,33 @@ const VCard = props => {
                 <div className={classes.box}>
                     <div className={classes.front}>
                         <div className={classes.center}>
-                            <img src={derivBigLogo} alt="deriv_logo"/>
+                            <img src={derivBigLogo} alt="deriv_logo" />
                             <p>Make trading accessible to anyone, anywhere</p>
                         </div>
                     </div>
                     <div className={classes.back}>
                         <div className={classes.row}>
-                            <img src={derivSmalLogo} alt="deriv_logo"/>
+                            <img src={derivSmalLogo} alt="deriv_logo" />
                             <div className={classes.title}>
                                 <h1>
                                     {title} {firstName} {lastName}
                                 </h1>
-                                <h3>{position}</h3>
+                                <h3>{jobTitle}</h3>
                             </div>
                         </div>
                         <div className={classes.row}>
-                            <span>
-                                <a href={`tel:${contact}`}>{contact}</a>
-                            </span>
-                            <span>
+                            <div className={classes.contact}>
+                                <FontAwesomeIcon icon={faPhoneAlt} size={"1x"} />
+                                <a href={`tel:${mobile}`}>{mobile}</a>
+                            </div>
+                            <div className={classes.contact}>
+                                <FontAwesomeIcon icon={faEnvelope} size={"1x"} />
                                 <a href={`mailto:${email}`}>{email}</a>
-                            </span>
-                            <span>{address}</span>
+                            </div>
+                            <div className={classes.contact}>
+                                <FontAwesomeIcon icon={faMapMarkerAlt} size={"1x"} />
+                                <div>{location}</div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -56,22 +64,27 @@ const VCard = props => {
                     <div className={classes.box} id="business-card_front">
                         <div className={classes.back}>
                             <div className={classes.row}>
-                                <img src={derivSmalLogo} alt="deriv_logo"/>
+                                <img src={derivSmalLogo} alt="deriv_logo" />
                                 <div className={classes.title}>
                                     <h1>
                                         {title} {firstName} {lastName}
                                     </h1>
-                                    <h3>{position}</h3>
+                                    <h3>{jobTitle}</h3>
                                 </div>
                             </div>
                             <div className={classes.row}>
-                                <span>
-                                    <a href={`tel:${contact}`}>{contact}</a>
-                                </span>
-                                <span>
+                                <div className={classes.contact}>
+                                    <FontAwesomeIcon icon={faPhoneAlt} size={"1x"} />
+                                    <a href={`tel:${mobile}`}>{mobile}</a>
+                                </div>
+                                <div className={classes.contact}>
+                                    <FontAwesomeIcon icon={faEnvelope} size={"1x"} />
                                     <a href={`mailto:${email}`}>{email}</a>
-                                </span>
-                                <span>{address}</span>
+                                </div>
+                                <div className={classes.contact}>
+                                    <FontAwesomeIcon icon={faMapMarkerAlt} size={"1x"} />
+                                    <div>{location}</div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -80,7 +93,7 @@ const VCard = props => {
                     <div className={classes.box} id="business-card_back">
                         <div className={classes.front}>
                             <div className={classes.center}>
-                                <img src={derivBigLogo} alt="deriv_logo"/>
+                                <img src={derivBigLogo} alt="deriv_logo" />
                                 <p>Make trading accessible to anyone, anywhere</p>
                             </div>
                         </div>

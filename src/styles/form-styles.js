@@ -1,36 +1,35 @@
-
-
 import styled from "styled-components";
 import palette from "./colors";
 
 export const StyledForm = styled.form`
-  .button-field {
-    margin-left: 25px;
-    margin-right: 25px;
-    display: flex;
-    justify-content: space-around;
-  }
-  button {
-    outline: none;
-    height: 40px;
-    width: 6rem;
-    font-size: 1rem;
-    border-radius: 10px;
-    background-color: transparent;
-    margin-bottom: 25px;
-  }
-  .active {
-    border: 2px solid ${palette.primary};
-    color: ${palette.primary};
-  }
-  .inactive {
-    border: 2px solid ${palette.secondary};
-    color: ${palette.secondary};
-  }
-  .active:hover {
-    cursor: pointer;
-    filter: saturate(200%);
-  }
+    .button-field {
+        margin-left: 25px;
+        margin-right: 25px;
+        display: flex;
+        justify-content: space-around;
+    }
+    button {
+        outline: none;
+        height: 40px;
+        width: 6rem;
+        font-size: 1rem;
+        border-radius: 10px;
+        background-color: transparent;
+        margin-bottom: 25px;
+        cursor: pointer;
+    }
+    .active {
+        border: 2px solid ${palette.primary};
+        color: ${palette.primary};
+    }
+    .inactive {
+        border: 2px solid ${palette.secondary};
+        color: ${palette.secondary};
+    }
+    .active:hover {
+        cursor: pointer;
+        filter: saturate(200%);
+    }
 `;
 
 export const StyledField = styled.div`
@@ -116,12 +115,12 @@ export const StyledField = styled.div`
   }
 `;
 export const Error = styled.div`
-  align-self: start;
-  color: red;
-  font-family: sans-serif;
-  font-weight: 500;
-  font-size: 1rem;
-  cursor: pointer;
-  margin-right: 25px;
-  align-self: center;
+    align-self: start;
+    color: red;
+    font-family: sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-right: 25px;
+    align-self: center;
 `;

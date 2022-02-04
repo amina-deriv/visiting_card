@@ -12,7 +12,7 @@ const DisplayBoard = props => {
                 <Tabs>
                     <TabList>
                         <Tab>QR Code</Tab>
-                        <Tab>Business Card</Tab>ß
+                        <Tab>Business Card</Tab>
                     </TabList>
                     <TabPanel>
                         <QrCode vCard={props.userData} />

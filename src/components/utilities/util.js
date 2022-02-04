@@ -4,39 +4,46 @@ import html2canvas from "html2canvas";
 export const baseContact = {
     title: undefined,
     lastName: undefined,
-    contact: undefined,
+    mobile: undefined,
     company: undefined,
-    position: undefined,
-    address: undefined,
+    jobTitle: undefined,
+    location: undefined,
     website: undefined,
 };
 
 export function getVCardFormat(userData) {
+    console.log("User data: ", userData);
     if (userData) {
-        const { title, firstName, lastName, contact, email, company,address, website } = userData;
+        const { title, firstName, lastName, mobile, email, company, location, website } = userData;
         return (
             "BEGIN:VCARD\r\nVERSION:3.0\r\n" +
-            "N:" +
+            "FN;CHARSET=UTF-8:" +
+            firstName +
+            " " +
+            lastName +
+            "\r\n" +
+            "N;CHARSET=UTF-8:" +
             lastName +
             ";" +
             firstName +
             "\r\n" +
-            "URL:" +
+            "URL;" +
             website +
             "\r\n" +
-            "EMAIL;TYPE=work:" +
+            "EMAIL;CHARSET=UTF-8;TYPE=work:" +
             email +
             "\r\n" +
-            "TEL;TYPE=work:" +
-            contact +
+            "TEL;TYPE=work,VOICE:" +
+            mobile +
             "\r\n" +
-            "ADR;TYPE=work:" +
-            address +
+            "ADR;TYPE=WORK:" +
+            location +
+            ";" +
             "\r\n" +
-            "ORG:" +
+            "ORG;" +
             company +
             "\r\n" +
-            "TITLE:" +
+            "TITLE;" +
             title +
             "\r\n" +
             "END:VCARD"
