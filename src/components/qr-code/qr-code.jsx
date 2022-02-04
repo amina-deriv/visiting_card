@@ -22,7 +22,9 @@ const QrCode = props => {
         ],
     };
 
-    const { title, firstName, lastName, position } = {
+    console.log("QRCODE: ", props.vCard);
+
+    const { title, firstName, lastName, jobTitle } = {
         ...baseContact,
         ...props.vCard,
     };
@@ -46,7 +48,7 @@ const QrCode = props => {
                     <h2>
                         {title} {firstName} {lastName}
                     </h2>
-                    <p className={classes.title}>{position}</p>
+                    <p className={classes.title}>{jobTitle}</p>
                     <div className={classes.action}>
                         <button onClick={downloadHandler}>Download as Image</button>
                         <button onClick={createVCard}>Download as .vcf</button>
