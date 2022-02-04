@@ -1,8 +1,45 @@
-// .app {
-//   background-color: #282c34;
-//   // height: 100vh;
 
-//   .start {
-//     color: white;
-//   }
-// }
+.container {
+    display: flex;
+    flex-direction: row;
+
+    @media screen and (max-width:450px) {
+      flex-direction: column;
+    }
+    // gap:3rem
+    // width: 100vw;
+  }
+  
+  .left-half {
+    background-color: wheat;
+    border-radius: 5px;
+    flex: 1;
+    padding: 1rem;
+    margin: 1rem;
+    // width: 50%;
+  }
+  
+  .right-half {
+    /* background-color: #b6701e; */
+    flex: 1;
+    padding: 1rem;
+    margin: 1rem;
+    border: 0.5px solid wheat;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // width: 50%;
+  }
+
+.title {
+    color: whitesmoke;
+    text-align: center;
+    font-size: 3rem;
+    margin: 4px 0;
+
+    @media screen and (max-width:450px) {
+      font-size: 1.5rem;
+      // color: red;
+  }
+}
